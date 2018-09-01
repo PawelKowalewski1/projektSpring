@@ -11,12 +11,12 @@ public class UserController {
 
     @GetMapping("/register")
     public String rejestracja (Model model){
-        return "";
+        return "rejestracja";
 
     }
     @PostMapping("/register")
     public String rejestracjaAkcja (Model model){
-        return "";
+        return "rejestracja";
     }
 
 

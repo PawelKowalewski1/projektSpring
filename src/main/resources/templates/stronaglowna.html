@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta content="name" language="english">
@@ -16,10 +16,10 @@
 <h1>Witamy na stronie REAKTOR PWN</h1>
 
 <p>Jeśli jesteś naszym kursantem</p>
-<button>Zaloguj się</button>
+<a th:href="@{/login}">Zaloguj się</a>
 
 <p>Jeśli chcesz do nas dołaczyc</p>
-<button>Zajerestrój sie</button>
+<a th:href="@{/register}">Zajerestruj sie</a>
 
 
 </body>
