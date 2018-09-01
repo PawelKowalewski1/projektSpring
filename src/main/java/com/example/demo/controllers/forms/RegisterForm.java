@@ -28,7 +28,5 @@ public class RegisterForm {
     private String GitHubLogin;
     @NotEmpty
     private String telephone;
-
-
-
+    
 }
