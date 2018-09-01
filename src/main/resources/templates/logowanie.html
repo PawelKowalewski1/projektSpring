@@ -21,9 +21,10 @@
 <body>
 <h1>Logowanie</h1>
 
-<form method="get">
+<form th:method="post" th:action="@{/login-process}">
     <div>EMAIL <input type="text" name="email" alt="email" placeholder="podaj adres e-mail"></input></div>
     <div>PASSWORD <input type="password" name="password" alt="password" placeholder="podaj hasło"></input></div>
+    <input type="submit" value="ZALOGUJ MNIE">
 </form>
 
 

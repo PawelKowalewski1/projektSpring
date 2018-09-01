@@ -25,19 +25,19 @@ import javax.sql.DataSource;
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
-                    .antMatchers("/post/add").hasAnyAuthority("EDITOR")
-                    .antMatchers("/posts").hasAnyAuthority("USER", "EDITOR")
-                    .antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+                    .antMatchers("/user").hasAnyAuthority("USER")
+                    .antMatchers("/user").hasAnyAuthority("USER")
+                    .antMatchers("/user/**").hasAnyAuthority("USER")
 
                     .anyRequest().permitAll()
                     .and().csrf().disable()
                     .formLogin()
-                    .loginPage("/user/login")
-                    .usernameParameter("username")
+                    .loginPage("/login")
+                    .usernameParameter("email")
                     .passwordParameter("password")
                     .loginProcessingUrl("/login-process")
-                    .failureUrl("/user/login?error")
-                    .defaultSuccessUrl("/posts");
+                    .failureUrl("/login?error")
+                    .defaultSuccessUrl("/user");
         }
 
         @Override
