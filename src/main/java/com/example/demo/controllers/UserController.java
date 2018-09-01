@@ -10,10 +10,12 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 @Controller
 public class UserController {
+
     private UserRepositories userRepositories;
 
     @Autowired
@@ -45,8 +47,13 @@ public class UserController {
         user.setGitHubLogin(registerForm.getGitHubLogin());
         user.setTelephone(registerForm.getTelephone());
         user.setActive(true);
+        user.setRole("ROLE_USER");
         userRepositories.save(user);
         return "redirect:/profilkursanta";
 
+    }
+    @RequestMapping("/login")
+        public String loginForm (){
+        return "logowanie";
     }
 }

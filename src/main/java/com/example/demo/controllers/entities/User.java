@@ -30,6 +30,7 @@ public class User {
     private String javaOpis;
     private Long springOcena;
     private String springOpis;
+    private String role;
 
     @Column(name="enabled")
     private Boolean active;
