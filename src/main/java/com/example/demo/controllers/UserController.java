@@ -26,6 +26,11 @@ public class UserController {
 
     private UserRepositories userRepositories;
 
+    @Autowired
+    public UserController(UserRepositories userRepositories) {
+        this.userRepositories = userRepositories;
+    }
+
     @GetMapping("/register")
     public String rejestracja (Model model){
         model.addAttribute("registerForm", new RegisterForm());
