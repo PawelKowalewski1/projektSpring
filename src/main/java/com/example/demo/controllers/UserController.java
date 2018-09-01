@@ -3,6 +3,8 @@ import com.example.demo.controllers.forms.RegisterForm;
 import com.example.demo.controllers.entities.User;
 import com.example.demo.repositories.UserRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,8 +61,11 @@ public class UserController {
     }
 
     @GetMapping("/profilkursanta")
-    public String profilKursanta (){
-
+    public String profilKursanta (Authentication auth, Model model){
+        UserDetails userDetails = (UserDetails) auth.getPrincipal();
+        User user = userRepositories.findOneByEmail(userDetails.getUsername());
+        System.out.println(user);
+        model.addAttribute("user", user);
         return "profilkursanta";
     }
 }

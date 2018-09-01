@@ -28,17 +28,17 @@
 <h2>Moje dane </h2>
 
 <div class="container">
-    <div>Imie</div><textarea type="textarea"></textarea>
-    <div>Nazwisko</div><textarea type="textarea"></textarea>
-    <div>Adres e-mail</div><textarea type="textarea"></textarea>
+    <div>Imie</div><textarea th:text="${user.name}" type="textarea"></textarea>
+    <div>Nazwisko</div><textarea th:text="${user.lastname}" type="textarea"></textarea>
+    <div>Adres e-mail</div><textarea th:text="${user.email}" type="textarea"></textarea>
 
-    <div>GitHub login</div><textarea type="textarea"></textarea>
-    <div>Telefon</div><textarea type="textarea"></textarea>
+    <div>GitHub login</div><textarea th:text="${user.GitHubLogin}"   type="textarea"></textarea>
+    <div>Telefon</div><textarea th:text="${user.telephone}" type="textarea"></textarea>
 </div>
 
 <form>
 
-    <div>Ocena SQL:  <textarea type="text"></textarea></div>
+    <div>Ocena SQL:  <textarea  type="text"></textarea></div>
     <textarea style="width:300px; height:20px;" type="textarea"></textarea>
 
     <div>Ocena JAVA: <textarea type="text"></textarea></div>
