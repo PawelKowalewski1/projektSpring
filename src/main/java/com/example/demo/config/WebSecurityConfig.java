@@ -24,9 +24,7 @@ import javax.sql.DataSource;
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests()
-
-
+            http.authorizeRequests().antMatchers("/profilkursanta").hasAnyAuthority("ROLE_USER")
                     .anyRequest().permitAll()
                     .and().csrf().disable()
                     .formLogin()

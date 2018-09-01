@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Profil kursanta</title>
@@ -28,12 +26,12 @@
 <h2>Moje dane </h2>
 
 <div class="container">
-    <div>Imie</div><textarea type="textarea"></textarea>
-    <div>Nazwisko</div><textarea type="textarea"></textarea>
-    <div>Adres e-mail</div><textarea type="textarea"></textarea>
-
-    <div>GitHub login</div><textarea type="textarea"></textarea>
-    <div>Telefon</div><textarea type="textarea"></textarea>
+    <div>Imie</div>
+    <div>Nazwisko</div>
+    <div>Dres e-mail</div>
+    <div>Has³o</div>
+    <div>GitHub login</div>
+    <div>Telefon</div>
 </div>
 
 <form>
