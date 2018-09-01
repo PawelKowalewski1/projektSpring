@@ -6,7 +6,6 @@
     <title>Rejestracja</title>
 </head>
 <body>
-<div></div>
 
 <form th:method="post" th:action="@{/register}" class="registerForm" th:object="${registerForm}">
     <label>Imie
@@ -23,10 +22,10 @@
     </label><br>
 
     <label>Hasło
-        <input th:field="*{password}" type="text" name="password" alt="password" placeholder="podaj password">
+        <input th:field="*{password}" type="password" name="password" alt="password" placeholder="podaj password">
     </label><br>
     <label>Powtórz Hasło
-        <input th:field="*{password2}" type="text" name="password" alt="password" placeholder="podaj password">
+        <input th:field="*{password2}" type="password" name="password" alt="password" placeholder="podaj password">
     </label><br>
 
     <label>GitHubLogin

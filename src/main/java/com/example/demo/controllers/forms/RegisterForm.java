@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Setter
 @Getter
@@ -19,6 +17,7 @@ public class RegisterForm {
     @NotEmpty
     private String lastName;
     @NotEmpty
+    @Email
     private String email;
     @NotEmpty
     private String password;
@@ -27,6 +26,7 @@ public class RegisterForm {
     @NotEmpty
     private String GitHubLogin;
     @NotEmpty
+    @Pattern(regexp = "[0-9]{9}")
     private String telephone;
-    
+
 }
