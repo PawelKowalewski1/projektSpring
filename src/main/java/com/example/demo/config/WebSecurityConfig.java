@@ -25,9 +25,7 @@ import javax.sql.DataSource;
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
-                    .antMatchers("/user").hasAnyAuthority("USER")
-                    .antMatchers("/user").hasAnyAuthority("USER")
-                    .antMatchers("/user/**").hasAnyAuthority("USER")
+
 
                     .anyRequest().permitAll()
                     .and().csrf().disable()
@@ -37,18 +35,14 @@ import javax.sql.DataSource;
                     .passwordParameter("password")
                     .loginProcessingUrl("/login-process")
                     .failureUrl("/login?error")
-                    .defaultSuccessUrl("/user");
+                    .defaultSuccessUrl("/profilkursanta");
         }
 
         @Override
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.jdbcAuthentication()
                     .usersByUsernameQuery("SELECT email, password, enabled from user WHERE email=?")
-                    .authoritiesByUsernameQuery("SELECT u.email, r.role_name \n" +
-                            "FROM user u\n" +
-                            "JOIN user_role ur ON u.id = ur.user_id\n" +
-                            "JOIN role r ON r.id=ur.roles_id\n" +
-                            "WHERE u.email = ?")
+                    .authoritiesByUsernameQuery("SELECT email, role FROM user WHERE email = ?")
                     .dataSource(dataSource)
                     .passwordEncoder(bCryptPasswordEncoder);
         }

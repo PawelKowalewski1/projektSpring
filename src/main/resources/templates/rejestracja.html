@@ -10,30 +10,37 @@
 <form th:method="post" th:action="@{/register}" class="registerForm" th:object="${registerForm}">
     <label>Imie
         <input th:field="*{name}" type="text" name="imie" alt="imie" placeholder="podaj imie">
+        <span th:errors="*{name}"></span>
     </label><br>
 
 
     <label>Nazwisko
         <input th:field="*{lastName}" type="text" name="imie" alt="imie" placeholder="podaj nazwsiko">
+        <span th:errors="*{lastName}"></span>
     </label><br>
 
     <label>Adres e-mail
         <input th:field="*{email}" type="email" name="email" alt="email" placeholder="podaj email">
+        <span th:errors="*{email}"></span>
     </label><br>
 
     <label>Hasło
         <input th:field="*{password}" type="password" name="password" alt="password" placeholder="podaj password">
+        <span th:errors="*{password}"></span>
     </label><br>
     <label>Powtórz Hasło
         <input th:field="*{password2}" type="password" name="password" alt="password" placeholder="podaj password">
+        <span th:errors="*{password2}"></span>
     </label><br>
 
     <label>GitHubLogin
         <input th:field="*{gitHubLogin}" type="text" name="logingithub" alt="logingithub" placeholder="podaj GitHubLogin">
+        <span th:errors="*{gitHubLogin}"></span>
     </label><br>
 
     <label>Telefon
-        <input th:field="*{telephone}" type="text" name="telefon" alt="telefon" placeholder="podaj numer telefonu">
+        <input th:field="*{telephone}" type="text" name="telefon" alt="telefon" placeholder="podaj numer telefonu" >
+        <span th:errors="*{telephone}"></span>
     </label><br>
 
         <input type="submit" value="ZAREJESTRUJ MOJE DANE">

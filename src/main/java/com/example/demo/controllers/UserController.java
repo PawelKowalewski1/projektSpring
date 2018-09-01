@@ -54,6 +54,8 @@ public class UserController {
         user.setGitHubLogin(registerForm.getGitHubLogin());
         user.setTelephone(registerForm.getTelephone());
         user.setActive(true);
+        user.setRole("ROLE_USER");
+
         userRepositories.save(user);
         return "redirect:/profilkursanta";
     }
@@ -69,4 +71,9 @@ public class UserController {
     public String loginForm (){
 
         return "logowanie";
-    }}
+    }
+    @GetMapping("/profilkursanta")
+    public String profilKursanta (){
+
+        return "profilkursanta";
+}}
