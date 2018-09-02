@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+</head>
+<body>
+
+<form th:method="post" th:action="@{/register}" class="registerForm" th:object="${registerForm}">
+    <label>Imie
+        <input th:field="*{name}" type="text" name="imie" alt="imie" placeholder="podaj imie">
+        <span th:errors="*{name}"></span>
+    </label><br>
+
+
+    <label>Nazwisko
+        <input th:field="*{lastName}" type="text" name="imie" alt="imie" placeholder="podaj nazwsiko">
+        <span th:errors="*{lastName}"></span>
+    </label><br>
+
+    <label>Adres e-mail
+        <input th:field="*{email}" type="email" name="email" alt="email" placeholder="podaj email">
+        <span th:errors="*{email}"></span>
+    </label><br>
+
+    <label>Hasło
+        <input th:field="*{password}" type="password" name="password" alt="password" placeholder="podaj password">
+        <span th:errors="*{password}"></span>
+    </label><br>
+    <label>Powtórz Hasło
+        <input th:field="*{password2}" type="password" name="password" alt="password" placeholder="podaj password">
+        <span th:errors="*{password2}"></span>
+    </label><br>
+
+    <label>GitHubLogin
+        <input th:field="*{gitHubLogin}" type="text" name="logingithub" alt="logingithub" placeholder="podaj GitHubLogin">
+        <span th:errors="*{gitHubLogin}"></span>
+    </label><br>
+
+    <label>Telefon
+        <input th:field="*{telephone}" type="text" name="telefon" alt="telefon" placeholder="podaj numer telefonu" >
+        <span th:errors="*{telephone}"></span>
+    </label><br>
+
+        <input type="submit" value="ZAREJESTRUJ MOJE DANE">
+</form>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/clean-blog.min.js"></script>
+
+
+
+</body>
+</html>
